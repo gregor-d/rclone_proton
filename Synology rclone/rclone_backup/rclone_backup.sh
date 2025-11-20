@@ -25,7 +25,7 @@ ART="========"
 echo "$ART Backup started at $(date '+%d.%m.%Y %T') $ART" | tee -a "$LOGFILE"
 
 # Build command
-RCLONE_CMD="rclone copy \"$REMOTEDIR\" \"$LOCALDIR\" \
+RCLONE_CMD="rclone --config=\"$RCLONE_CONFIG\" copy \"$REMOTEDIR\" \"$LOCALDIR\" \
     --log-level=$LOGLEVEL \
     --log-file=\"$LOGFILE\" \
     --transfers=$TRANSFER_LIMIT \
