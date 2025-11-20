@@ -1,7 +1,8 @@
 ###########################################
 # Required
 ###########################################
-REMOTEDIR="pcloud:mycloudfolder"
+RCLONE_CONFIG="/volume1/config/rclone.conf"
+REMOTEDIR="pcloud:folder"
 LOCALDIR="/volume1/cloud_backup"
 
 ###########################################
@@ -12,12 +13,10 @@ LOGLEVEL="INFO"
 
 TRANSFER_LIMIT=4
 CHECKERS=8
-
 RETRIES=3
 RETRY_DELAY=10
 
-# Optional flags
-BWLIMIT=""
-CUSTOM_FLAGS=""
 VERBOSE=true
 DRY_RUN=false
+BWLIMIT=""
+CUSTOM_FLAGS=""
