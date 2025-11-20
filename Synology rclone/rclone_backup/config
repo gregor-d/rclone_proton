@@ -1,13 +1,6 @@
-###########################################
-# Required
-###########################################
-RCLONE_CONFIG="/volume1/config/rclone.conf"
 REMOTEDIR="pcloud:folder"
 LOCALDIR="/volume1/cloud_backup"
 
-###########################################
-# Optional tuning
-###########################################
 LOGFILE="/var/log/cloud_backup.log"
 LOGLEVEL="INFO"
 
