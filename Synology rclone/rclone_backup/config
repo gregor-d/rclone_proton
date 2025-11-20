@@ -1,62 +1,15 @@
-# Rclone Backup Script Configuration
+REMOTEDIR="pcloud:folder"
+LOCALDIR="/volume1/cloud_backup"
 
-# Local directories to be backed up (comma-separated list)
-# Example format: "/volume1/ISOs,/volume2/Documents"
-LOCALDIRS="/volume1/"
-
-# Remote directory destination (e.g., Google Drive)
-REMOTEDIR="rcloneremote:"
-
-# Operation mode: copy, sync, or move
-# Reference: https://rclone.org/commands/rclone_sync/
-OPERATION_MODE="copy"
-
-# Log level for rclone (DEBUG, INFO, ERROR)
-# Reference: https://rclone.org/docs/#log-level-level
+LOGFILE="/var/log/cloud_backup.log"
 LOGLEVEL="INFO"
 
-# Path to the log file
-LOGFILE="/volume1/log/rclone_backup.log"
-
-# Number of file transfers to perform simultaneously
-# Reference: https://rclone.org/docs/#transfers-n
 TRANSFER_LIMIT=4
-
-# Exclude patterns (comma-separated list)
-# Example format: "*.tmp,*.log,*/temp/*"
-# Reference: https://rclone.org/filtering/#exclude
-EXCLUDE_PATTERNS="*.db@SynoEAStream,.db,@eaDir/**,*.DS_Store,*.lnk,@SynoResource/**,#recycle/**"
-
-# Exclude directories if a specified filename is present (comma-separated list)
-# Example format: "secret.txt,temp.txt"
-# Reference: https://rclone.org/filtering/#exclude-if-present
-EXCLUDE_IF_PRESENT=""
-
-# Include only files that match a pattern (comma-separated list)
-# Example format: "*.jpg,*.png"
-# Reference: https://rclone.org/filtering/#include
-INCLUDE_PATTERN=""
-
-# Custom flags (space-separated list)
-# Reference: https://rclone.org/flags/
-CUSTOM_FLAGS="--fast-list"
-
-# Bandwidth limit (e.g., "10M" for 10 MBytes/s, or leave empty for unlimited)
-# Reference: https://rclone.org/docs/#bwlimit-bandwidth-spec
-BWLIMIT=""
-
-# Number of retries after a failure
-# Reference: https://rclone.org/docs/#retries-int
-RETRIES=3
-
-# Delay between retries, in seconds
-# Reference: https://rclone.org/docs/#retries-sleep-duration
-RETRY_DELAY=5
-
-# Number of checkers to run in parallel (affects the speed of file checks)
-# Reference: https://rclone.org/docs/#checkers-n
 CHECKERS=8
+RETRIES=3
+RETRY_DELAY=10
 
-# Enable dry run mode for testing (true/false)
-# Reference: https://rclone.org/docs/#n-dry-run
+VERBOSE=true
 DRY_RUN=false
+BWLIMIT=""
+CUSTOM_FLAGS=""
